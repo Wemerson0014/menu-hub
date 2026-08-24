@@ -1,15 +1,18 @@
 import SearchBar from "./SearchBar";
+import "./Header.css";
 
 function Header() {
   return (
-    <header>
-      <img src="/" alt="Logo" />
-      <h1>MenuHub</h1>
-      <nav>
-        <a href="/">Home</a>
+    <header className="header">
+      <div className="brand">
+        <img src="/" alt="Logo" />
+        <h1>Assados da Debora</h1>
+      </div>
+      <nav className="nav">
+        <a href="/">Início</a>
         <a href="/cardapio">Cardápio</a>
-        <a href="/entrar">Entrar</a>
-        <a href="/criar-conta">Criar Conta</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/contato">Contato</a>
       </nav>
       <SearchBar />
     </header>
