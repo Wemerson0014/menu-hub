@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 .nav {
@@ -9,7 +10,21 @@
   gap: 20px;
 }
 
+.nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav a:hover {
+  color: #ffa500;
+}
+
 .brand {
   display: flex;
   align-items: center;
+  gap: 20px;
+}
+
+.brand h1 {
+  font-size: 24px;
 }
