@@ -1,0 +1,58 @@
+.menu-section {
+  padding: 80px 40px;
+  background-color: #fff8ed;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.menu-header h2 {
+  font-size: 36px;
+  color: #6b2f1a;
+}
+
+.menu-header p {
+  color: #2b211b;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.menu-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.menu-card h3 {
+  font-size: 22px;
+  color: #6b2f1a;
+  margin: 16px 0 8px;
+}
+
+.menu-card p {
+  color: #2b211b;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 16px;
+}
+
+.menu-card p:last-child {
+  font-size: 20px;
+  font-weight: bold;
+  color: #c65d1e;
+  margin-top: 12px;
+}
