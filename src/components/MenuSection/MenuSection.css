@@ -1,6 +1,6 @@
 .menu-section {
   padding: 80px 40px;
-  background-color: #fff8ed;
+  background-color: var(--background-color);
 }
 
 .menu-header {
@@ -10,11 +10,19 @@
 
 .menu-header h2 {
   font-size: 36px;
-  color: #6b2f1a;
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+}
+
+.menu-card h3 {
+  font-size: 22px;
+  color: var(--primary-color);
+  margin: 16px 0 8px;
+  font-family: var(--font-heading);
 }
 
 .menu-header p {
-  color: #2b211b;
+  color: var(--text-color);
 }
 
 .menu-grid {
@@ -24,27 +32,26 @@
 }
 
 .menu-card {
-  background-color: white;
+  background-color: var(--white-color);
   border-radius: 16px;
-  padding: 20px;
+  overflow: hidden;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .menu-card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.menu-card h3 {
-  font-size: 22px;
-  color: #6b2f1a;
-  margin: 16px 0 8px;
+  display: block;
 }
 
 .menu-card p {
-  color: #2b211b;
+  color: var(--text-color);
   line-height: 1.6;
   margin: 0;
   font-size: 16px;
@@ -53,6 +60,29 @@
 .menu-card p:last-child {
   font-size: 20px;
   font-weight: bold;
-  color: #c65d1e;
+  color: var(--secondary-color);
   margin-top: 12px;
+  padding-bottom: 20px;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card h3,
+.menu-card p {
+  padding: 0 20px;
+}
+
+@media (max-width: 900px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
 }
