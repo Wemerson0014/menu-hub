@@ -1,5 +1,6 @@
 import "./MenuSection.css";
 import { products } from "../../data/products";
+import MenuCard from "../MenuCard/MenuCard";
 
 function MenuSection() {
   return (
@@ -11,17 +12,7 @@ function MenuSection() {
 
       <div className="menu-grid">
         {products.map((product) => (
-          <article key={product.id} className="menu-card">
-            {product.image && <img src={product.image} alt={product.name} />}
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <p>
-              {product.price.toLocaleString("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              })}
-            </p>
-          </article>
+          <MenuCard key={product.id} product={product} />
         ))}
       </div>
     </section>
