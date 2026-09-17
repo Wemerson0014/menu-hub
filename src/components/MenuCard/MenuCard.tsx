@@ -5,16 +5,14 @@ interface MenuCardProps {
   product: Product;
 }
 
-function MenuCard(props: MenuCardProps) {
+function MenuCard({ product }: MenuCardProps) {
   return (
     <article className="menu-card">
-      {props.product.image && (
-        <img src={props.product.image} alt={props.product.name} />
-      )}
-      <h3>{props.product.name}</h3>
-      <p>{props.product.description}</p>
+      {product.image && <img src={product.image} alt={product.name} />}
+      <h3>{product.name}</h3>
+      <p>{product.description}</p>
       <p>
-        {props.product.price.toLocaleString("pt-BR", {
+        {product.price.toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL",
         })}

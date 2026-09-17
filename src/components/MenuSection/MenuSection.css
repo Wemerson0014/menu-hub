@@ -14,13 +14,6 @@
   font-family: var(--font-heading);
 }
 
-.menu-card h3 {
-  font-size: 22px;
-  color: var(--primary-color);
-  margin: 16px 0 8px;
-  font-family: var(--font-heading);
-}
-
 .menu-header p {
   color: var(--text-color);
 }
@@ -29,50 +22,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-}
-
-.menu-card {
-  background-color: var(--white-color);
-  border-radius: 16px;
-  overflow: hidden;
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.menu-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-}
-
-.menu-card p {
-  color: var(--text-color);
-  line-height: 1.6;
-  margin: 0;
-  font-size: 16px;
-}
-
-.menu-card p:last-child {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--secondary-color);
-  margin-top: 12px;
-  padding-bottom: 20px;
-}
-
-.menu-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
-}
-
-.menu-card h3,
-.menu-card p {
-  padding: 0 20px;
 }
 
 @media (max-width: 900px) {
