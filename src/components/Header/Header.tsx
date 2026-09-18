@@ -1,5 +1,6 @@
 import SearchBar from "../SearchBar/SearchBar";
 import "./Header.css";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -9,10 +10,10 @@ function Header() {
         <h1>Assados da Debora</h1>
       </div>
       <nav className="nav">
-        <a href="/">Início</a>
-        <a href="/cardapio">Cardápio</a>
-        <a href="/sobre">Sobre</a>
-        <a href="/contato">Contato</a>
+        <NavLink to="/">Início</NavLink>
+        <NavLink to="/cardapio">Cardápio</NavLink>
+        <NavLink to="/sobre">Sobre</NavLink>
+        <NavLink to="/contato">Contato</NavLink>
       </nav>
       <SearchBar />
     </header>

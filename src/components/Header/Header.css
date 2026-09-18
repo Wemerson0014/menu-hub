@@ -36,3 +36,7 @@
     gap: 15px;
   }
 }
+
+.nav a.active {
+  color: #c65d1e;
+}
