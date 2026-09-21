@@ -1,12 +1,13 @@
 import SearchBar from "../SearchBar/SearchBar";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
+import Logo from "../../assets/logo.png";
 
 function Header() {
   return (
     <header className="header">
       <div className="brand">
-        <img src="/" alt="Logo" />
+        <img src={Logo} alt="Logo" />
         <h1>Assados da Debora</h1>
       </div>
       <nav className="nav">
