@@ -4,7 +4,7 @@ import MenuCard from "../MenuCard/MenuCard";
 
 function MenuSection() {
   return (
-    <section className="menu-section">
+    <section id="cardapio" className="menu-section">
       <div className="menu-header">
         <h2>Nosso Cardápio</h2>
         <p>Os assados mais pedidos do domingo.</p>

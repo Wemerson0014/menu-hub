@@ -2,6 +2,13 @@ import "./Hero.css";
 import roastedChicken from "../../assets/roasted-chicken.jpg";
 
 function Hero() {
+  function handleScrollToMenu() {
+    const menu = document.getElementById("cardapio");
+    menu?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
   return (
     <section className="hero">
       <div className="hero-content">
@@ -16,7 +23,9 @@ function Hero() {
           almoço de domingo ainda melhor.
         </p>
 
-        <button className="hero-button">Ver Cardápio</button>
+        <button className="hero-button" onClick={handleScrollToMenu}>
+          Ver Cardápio
+        </button>
       </div>
 
       <div className="hero-image">
