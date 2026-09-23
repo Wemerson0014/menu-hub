@@ -2,7 +2,11 @@ import "./MenuSection.css";
 import { products } from "../../data/products";
 import MenuCard from "../MenuCard/MenuCard";
 
-function MenuSection() {
+interface MenuSectionProps {
+  searchTerm: string;
+}
+
+function MenuSection({ searchTerm }: MenuSectionProps) {
   return (
     <section id="cardapio" className="menu-section">
       <div className="menu-header">
@@ -11,9 +15,17 @@ function MenuSection() {
       </div>
 
       <div className="menu-grid">
-        {products.map((product) => (
-          <MenuCard key={product.id} product={product} />
-        ))}
+        {products
+          .filter(
+            (product) =>
+              product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              product.description
+                .toLowerCase()
+                .includes(searchTerm.toLowerCase()),
+          )
+          .map((product) => (
+            <MenuCard key={product.id} product={product} />
+          ))}
       </div>
     </section>
   );

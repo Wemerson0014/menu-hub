@@ -3,7 +3,12 @@ import "./Header.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 
-function Header() {
+interface HeaderProps {
+  searchTerm: string;
+  setSearchTerm: (valor: string) => void;
+}
+
+function Header({ searchTerm, setSearchTerm }: HeaderProps) {
   return (
     <header className="header">
       <div className="brand">
@@ -16,7 +21,7 @@ function Header() {
         <NavLink to="/sobre">Sobre</NavLink>
         <NavLink to="/contato">Contato</NavLink>
       </nav>
-      <SearchBar />
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     </header>
   );
 }

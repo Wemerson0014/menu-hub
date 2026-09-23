@@ -1,9 +1,11 @@
 import "./SearchBar.css";
-import { useState } from "react";
 
-function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState("");
+interface SearchBarProps {
+  searchTerm: string;
+  setSearchTerm: (valor: string) => void;
+}
 
+function SearchBar({ searchTerm, setSearchTerm }: SearchBarProps) {
   return (
     <form
       id="form"
@@ -16,6 +18,7 @@ function SearchBar() {
         type="text"
         placeholder="Buscar..."
         onChange={(event) => setSearchTerm(event.target.value)}
+        value={searchTerm}
       />
       <button>Pesquisar</button>
     </form>
