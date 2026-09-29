@@ -1,9 +1,12 @@
 import MenuSection from "../components/MenuSection/MenuSection";
+import { useOutletContext } from "react-router-dom";
 
 function Menu() {
+  const searchTerm = useOutletContext<string>();
+
   return (
     <>
-      <MenuSection />
+      <MenuSection searchTerm={searchTerm} />
     </>
   );
 }

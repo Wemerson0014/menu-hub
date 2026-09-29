@@ -1,6 +1,7 @@
 .menu-section {
   padding: 80px 40px;
   background-color: var(--background-color);
+  scroll-margin-top: 70px;
 }
 
 .menu-header {

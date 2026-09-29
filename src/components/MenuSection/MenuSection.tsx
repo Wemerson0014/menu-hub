@@ -7,6 +7,12 @@ interface MenuSectionProps {
 }
 
 function MenuSection({ searchTerm }: MenuSectionProps) {
+  const filteredProducts = products.filter(
+    (product) =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
+
   return (
     <section id="cardapio" className="menu-section">
       <div className="menu-header">
@@ -15,17 +21,13 @@ function MenuSection({ searchTerm }: MenuSectionProps) {
       </div>
 
       <div className="menu-grid">
-        {products
-          .filter(
-            (product) =>
-              product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              product.description
-                .toLowerCase()
-                .includes(searchTerm.toLowerCase()),
-          )
-          .map((product) => (
+        {filteredProducts.length === 0 ? (
+          <h2>Nenhum produto foi encontrado com sua pesquisa.</h2>
+        ) : (
+          filteredProducts.map((product) => (
             <MenuCard key={product.id} product={product} />
-          ))}
+          ))
+        )}
       </div>
     </section>
   );
