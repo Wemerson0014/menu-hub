@@ -1,3 +1,4 @@
+import { whatsappUrl } from "../constants/contact";
 import "./Contact.css";
 import { FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 
@@ -22,7 +23,7 @@ function Contact() {
       <section className="contact-item">
         <h2>Faça seu pedido diretamente pelo WhatsApp</h2>
         <a
-          href="https://wa.me/5531991229944"
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="contact-action contact-item-whatsapp-button"
