@@ -16,8 +16,11 @@ function MenuSection({ searchTerm }: MenuSectionProps) {
   return (
     <section id="cardapio" className="menu-section">
       <div className="menu-header">
-        <h2>Nosso Cardápio</h2>
-        <p>Os assados mais pedidos do domingo.</p>
+        <h2>Escolha seu favorito</h2>
+        <p>
+          Assados, carnes recheadas, acompanhamentos e outras delícias
+          preparadas para você.
+        </p>
       </div>
 
       <div className="menu-grid">

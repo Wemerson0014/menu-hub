@@ -13,14 +13,14 @@ function Hero() {
     <section className="hero">
       <div className="hero-content">
         <span className="hero-tag">
-          🍗 Assados fresquinhos todos os domingos
+          🍗 Assados fresquinhos aos sábados e domingos
         </span>
 
         <h1>O sabor do final de semana está aqui.</h1>
 
         <p>
-          Frango assado, costela, barriga, joelho e muito mais para deixar seu
-          almoço de domingo ainda melhor.
+          Frango assado, carnes recheadas, costelinha, acompanhamentos e muito
+          mais para deixar seu final de semana ainda mais saboroso.
         </p>
 
         <button className="hero-button" onClick={handleScrollToMenu}>
