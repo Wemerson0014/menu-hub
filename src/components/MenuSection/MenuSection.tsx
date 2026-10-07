@@ -7,10 +7,11 @@ interface MenuSectionProps {
 }
 
 function MenuSection({ searchTerm }: MenuSectionProps) {
+  const normalizedSearchTerm = searchTerm.toLowerCase();
   const filteredProducts = products.filter(
     (product) =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTerm.toLowerCase()),
+      product.name.toLowerCase().includes(normalizedSearchTerm) ||
+      product.description.toLowerCase().includes(normalizedSearchTerm),
   );
 
   return (
