@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       <Hero />
-      <MenuSection searchTerm={searchTerm} />
+      <MenuSection searchTerm={searchTerm} limit={3} />
       <AboutSection />
 
       <a

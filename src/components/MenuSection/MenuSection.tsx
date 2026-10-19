@@ -7,6 +7,7 @@ import MenuCard from "../MenuCard/MenuCard";
 
 interface MenuSectionProps {
   searchTerm: string;
+  limit?: number;
 }
 
 interface DatabaseProduct {
@@ -16,9 +17,10 @@ interface DatabaseProduct {
   price: number;
   image_url: string | null;
   is_available: boolean;
+  category: string;
 }
 
-function MenuSection({ searchTerm }: MenuSectionProps) {
+function MenuSection({ searchTerm, limit }: MenuSectionProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -28,7 +30,9 @@ function MenuSection({ searchTerm }: MenuSectionProps) {
       try {
         const { data, error: queryError } = await supabase
           .from("products")
-          .select("id, name, description, price, image_url, is_available")
+          .select(
+            "id, name, description, price, image_url, is_available, category",
+          )
           .eq("is_available", true)
           .order("id");
 
@@ -40,7 +44,10 @@ function MenuSection({ searchTerm }: MenuSectionProps) {
 
         const formattedProducts: Product[] = databaseProducts.map((product) => {
           const localProduct = localProducts.find(
-            (item) => item.name === product.name,
+            (item) =>
+              item.name === product.name ||
+              (item.name === "Costelinha" &&
+                product.name === "Costelinha de porco"),
           );
 
           return {
@@ -49,6 +56,7 @@ function MenuSection({ searchTerm }: MenuSectionProps) {
             description: product.description,
             price: Number(product.price),
             image: product.image_url ?? localProduct?.image ?? "",
+            category: product.category,
           };
         });
 
@@ -69,8 +77,28 @@ function MenuSection({ searchTerm }: MenuSectionProps) {
   const filteredProducts = products.filter(
     (product) =>
       product.name.toLowerCase().includes(normalizedSearchTerm) ||
-      product.description.toLowerCase().includes(normalizedSearchTerm),
+      product.description.toLowerCase().includes(normalizedSearchTerm) ||
+      product.category.toLowerCase().includes(normalizedSearchTerm),
   );
+
+  const featuredNames = [
+    "Frango Assado",
+    "Costelinha de porco",
+    "Asinha Assada",
+  ];
+
+  const featuredProducts = filteredProducts.filter((product) =>
+    featuredNames.includes(product.name),
+  );
+
+  const displayedProducts =
+    limit !== undefined && searchTerm.trim() === ""
+      ? featuredProducts
+      : filteredProducts;
+
+  const categories = [
+    ...new Set(displayedProducts.map((product) => product.category)),
+  ];
 
   return (
     <section id="cardapio" className="menu-section">
@@ -87,11 +115,21 @@ function MenuSection({ searchTerm }: MenuSectionProps) {
           <p>Carregando cardápio...</p>
         ) : error ? (
           <p role="alert">{error}</p>
-        ) : filteredProducts.length === 0 ? (
+        ) : displayedProducts.length === 0 ? (
           <h2>Nenhum produto foi encontrado com sua pesquisa.</h2>
         ) : (
-          filteredProducts.map((product) => (
-            <MenuCard key={product.id} product={product} />
+          categories.map((category) => (
+            <div key={category} className="menu-category">
+              <h3>{category}</h3>
+
+              <div className="menu-grid">
+                {displayedProducts
+                  .filter((product) => product.category === category)
+                  .map((product) => (
+                    <MenuCard key={product.id} product={product} />
+                  ))}
+              </div>
+            </div>
           ))
         )}
       </div>

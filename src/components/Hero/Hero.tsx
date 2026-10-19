@@ -1,5 +1,5 @@
 import "./Hero.css";
-import roastedChicken from "../../assets/roasted-chicken.jpg";
+import roastedChicken from "../../assets/roasted-chicken.webp";
 
 function Hero() {
   function handleScrollToMenu() {
