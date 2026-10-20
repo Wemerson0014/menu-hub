@@ -1,12 +1,12 @@
 import "./Hero.css";
 import roastedChicken from "../../assets/roasted-chicken.webp";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
-  function handleScrollToMenu() {
-    const menu = document.getElementById("cardapio");
-    menu?.scrollIntoView({
-      behavior: "smooth",
-    });
+  const navigate = useNavigate();
+
+  function handleNavigateToMenu() {
+    navigate("/cardapio");
   }
 
   return (
@@ -23,7 +23,7 @@ function Hero() {
           mais para deixar seu final de semana ainda mais saboroso.
         </p>
 
-        <button className="hero-button" onClick={handleScrollToMenu}>
+        <button className="hero-button" onClick={handleNavigateToMenu}>
           Ver Cardápio
         </button>
       </div>
