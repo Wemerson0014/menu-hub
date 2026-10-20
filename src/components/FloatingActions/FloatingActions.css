@@ -34,3 +34,29 @@
   display: none;
   font-size: 16px;
 }
+
+.back-to-top-button {
+  position: fixed;
+  right: 30px;
+  bottom: 105px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-to-top-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}

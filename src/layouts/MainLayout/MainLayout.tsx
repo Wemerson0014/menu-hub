@@ -1,6 +1,7 @@
 import Header from "../../components/Header/Header";
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
+import FloatingActions from "../../components/FloatingActions/FloatingActions";
 
 function MainLayout() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -31,6 +32,7 @@ function MainLayout() {
       <main>
         <Outlet context={searchTerm} />
       </main>
+      <FloatingActions />
     </>
   );
 }

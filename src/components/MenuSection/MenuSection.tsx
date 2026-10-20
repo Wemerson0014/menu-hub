@@ -110,6 +110,19 @@ function MenuSection({ searchTerm, limit }: MenuSectionProps) {
         </p>
       </div>
 
+      {limit === undefined && (
+        <nav className="menu-categories-nav">
+          {categories.map((category) => (
+            <a
+              key={category}
+              href={`#${category.toLowerCase().replace(" ", "-")}`}
+            >
+              {category}
+            </a>
+          ))}
+        </nav>
+      )}
+
       <div className="menu-grid">
         {isLoading ? (
           <p>Carregando cardápio...</p>
@@ -119,9 +132,12 @@ function MenuSection({ searchTerm, limit }: MenuSectionProps) {
           <h2>Nenhum produto foi encontrado com sua pesquisa.</h2>
         ) : (
           categories.map((category) => (
-            <div key={category} className="menu-category">
+            <div
+              key={category}
+              className="menu-category"
+              id={category.toLowerCase().replace(" ", "-")}
+            >
               <h3>{category}</h3>
-
               <div className="menu-grid">
                 {displayedProducts
                   .filter((product) => product.category === category)
