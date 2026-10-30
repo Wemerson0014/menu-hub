@@ -7,7 +7,7 @@ interface MenuCardProps {
 
 function MenuCard({ product }: MenuCardProps) {
   return (
-    <article className="menu-card">
+    <article className={`menu-card ${product.category.toLowerCase()}`}>
       {product.image && <img src={product.image} alt={product.name} />}
       <h3>{product.name}</h3>
       <p>{product.description}</p>

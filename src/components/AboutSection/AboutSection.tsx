@@ -1,5 +1,6 @@
 import "./AboutSection.css";
 import roastedChicken from "../../assets/roasted-chicken.webp";
+import { whatsappUrl } from "../../constants/contact";
 
 function AboutSection() {
   return (
@@ -19,7 +20,14 @@ function AboutSection() {
           tornar o almoço de domingo ainda mais especial.
         </p>
 
-        <button className="about-button">Fazer pedido no WhatsApp</button>
+        <a
+          href={whatsappUrl}
+          className="about-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Fazer pedido no WhatsApp
+        </a>
       </div>
 
       <div className="about-image">

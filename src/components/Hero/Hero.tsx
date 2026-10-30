@@ -12,9 +12,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <span className="hero-tag">
-          🍗 Assados fresquinhos aos sábados e domingos
-        </span>
+        <span className="hero-tag">🍗 Assados fresquinhos aos domingos</span>
 
         <h1>O sabor do final de semana está aqui.</h1>
 
