@@ -1,5 +1,5 @@
 import "./AboutSection.css";
-import roastedChicken from "../../assets/roasted-chicken.webp";
+import ribs from "../../assets/roasted-ribs.webp";
 import { whatsappUrl } from "../../constants/contact";
 
 function AboutSection() {
@@ -31,7 +31,7 @@ function AboutSection() {
       </div>
 
       <div className="about-image">
-        {<img src={roastedChicken} alt="Frango assado da Assados da Débora" />}
+        <img src={ribs} alt="Costelinha assada" />
       </div>
     </section>
   );
